@@ -1,0 +1,25 @@
+---
+layout: post
+title: "Trace Project Evolving in Git"
+date: 2012-11-23 21:48
+comments: true
+categories: 
+published: true
+---
+
+Going over the source code on github is very common routine to me. It provides a great learning but most of the times I find it overwhelming and too much code to digest. For large projects it was very hard to even get started (hardly any clue on which file/module to start with). These projects are built over time and it makes sense to start learning from where the project began and how it changed gradually. Since git is a distrubuted version control this should be possible. There was no ready tool available where I could simply switch to the first commit and then keep observing the changes in the next commit. So I decided to build a simple command line tool for this using python. The result was the <a href="http://github.com/yoganand/git-evolver">git-evolver</a> project hosted on github.
+
+The tool is built using gitPython. The following command will install gitPython. 
+
+	easy_install gitpython
+
+
+To trace the evolution of any project on github all you need to do is clone the project and copy the evolver script from the <a href="http://github.com/yoganand/git-evolver">git-evolver</a> project into the root folder of the project. Then you can run the following command to start tracing the project.
+
+	python evolver.py 
+
+
+This will change the state of the project to the first commit. The command line tool will be waiting for the commands. Typing commands on the prompt we will be able to move the state of the project to next/previous commits and observe the changes. The "help" command will give the list of available commands.
+
+It project was half a day exercise and it is intended for audience who spend a lot of time going over the source code. Hope it eases the learning curve for some of the readers.
+
